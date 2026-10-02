@@ -31,6 +31,11 @@ than `or`, so the condition works without parentheses
 | 1900  | No leap year | divisible by 100, not by 400 |
 | 2000  | Leap year | divisible by 400 |
 
+**Known limitations:**
+- Entering text instead of a number crashes the program (`ValueError`
+  from `int()`). Handling this with `try`/`except` is planned for
+  Programming 2.
+
 ## Assignment: Palindrom (`palindrom.py`)
 
 **Task:** Implement a Python program that checks
@@ -45,8 +50,8 @@ output whether or not that word is a palindrome.
 - Reading user input with `input()` and normalizing it
 with `.lower()`, so upper and lower case don't matter
 - Reversing a string with slicing `[::-1]`
-- Keeping the original and the reversed word in two
-separate variables so they can be compared
+- Separating display and comparison: the original input is kept
+for the output, a lowercase copy is used for the comparison
 - Comparing values with `==` (not `=`, which is assignment)
 - Formatting output with f-strings
 - Branching with `if` / `else`
@@ -54,8 +59,12 @@ separate variables so they can be compared
 **Test cases (checked manually):**
 | Input | Expected | Rule tested |
 |-------|----------|-------------|
-| Anna  | Palindrome | upper and lower case are ignored |
-| ANNA  | Palindrome | `.lower()` normalizes the input |
+| Anna  | "Anna is a palindrome" | case is ignored, original spelling kept in output |
 | Otto  | Palindrome | even number of letters |
 | Radar | Palindrome | odd number of letters, middle letter stays |
 | Haus  | Not a palindrome | reversed word differs |
+
+**Known limitations:**
+- An empty input is reported as a palindrome, because an empty string
+  reversed is still an empty string (`"" == ""` is `True`). The task
+  doesn't require input validation, so I documented it instead.
