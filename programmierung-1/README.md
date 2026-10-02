@@ -30,3 +30,32 @@ than `or`, so the condition works without parentheses
 | 2024  | Leap year | divisible by 4, not by 100 |
 | 1900  | No leap year | divisible by 100, not by 400 |
 | 2000  | Leap year | divisible by 400 |
+
+## Assignment: Palindrom (`palindrom.py`)
+
+**Task:** Implement a Python program that checks
+whether a given word is a palindrome.
+A palindrome is a word that reads the same forwards
+and backwards.
+
+Your program should ask the user for a word and then
+output whether or not that word is a palindrome.
+
+**What I learned:**
+- Reading user input with `input()` and normalizing it
+with `.lower()`, so upper and lower case don't matter
+- Reversing a string with slicing `[::-1]`
+- Keeping the original and the reversed word in two
+separate variables so they can be compared
+- Comparing values with `==` (not `=`, which is assignment)
+- Formatting output with f-strings
+- Branching with `if` / `else`
+
+**Test cases (checked manually):**
+| Input | Expected | Rule tested |
+|-------|----------|-------------|
+| Anna  | Palindrome | upper and lower case are ignored |
+| ANNA  | Palindrome | `.lower()` normalizes the input |
+| Otto  | Palindrome | even number of letters |
+| Radar | Palindrome | odd number of letters, middle letter stays |
+| Haus  | Not a palindrome | reversed word differs |
