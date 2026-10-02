@@ -3,9 +3,9 @@
 Assignments from my Python class. Each section
 describes the task and what I learned from it.
 
-## Assigment: Schaltjahr (`schaltjahr.py`)
+## Assignment: Schaltjahr (`schaltjahr.py`)
 
-**Task:** Implement the a Python program that checks
+**Task:** Implement a Python program that checks
 whether a given year is a leap year.
 A year is a leap year:
 
@@ -22,3 +22,11 @@ with `int()`
 - Combining conditions with `and` / `or` - `and` binds stronger
 than `or`, so the condition works without parentheses
 - Branching with `if` / `else`
+
+**Test cases (checked manually):**
+| Input | Expected | Rule tested |
+|-------|----------|-------------|
+| 2023  | No leap year | not divisible by 4 |
+| 2024  | Leap year | divisible by 4, not by 100 |
+| 1900  | No leap year | divisible by 100, not by 400 |
+| 2000  | Leap year | divisible by 400 |
