@@ -68,3 +68,37 @@ for the output, a lowercase copy is used for the comparison
 - An empty input is reported as a palindrome, because an empty string
   reversed is still an empty string (`"" == ""` is `True`). The task
   doesn't require input validation, so I documented it instead.
+
+## Assignment: Häufigstes Element (`haeufigstes_element.py`)
+
+**Task:** Find the most frequent number in a list and print it
+together with how often it occurs. Checked for several lists.
+
+**What I learned:**
+- My first tests were green even though there was a bug. The test
+lists just happened to hide it.
+- Variables like `max_counter` must be set back to 0 for every new
+list. Otherwise the result of the previous list stays in them.
+- The `if` check only needs to run once after the inner loop, because
+only then `counter` is final. Checking inside the loop gave the same result,
+just with more comparisons.
+- I added the list `[9, 9, 8]` as a test, so the bug would show up
+again if I ever make it again.
+
+**Test cases (checked manually):**
+| Input | Why this case | Expected | Actual |
+|-------|---------------|----------|--------|
+| `[1, 2, 2, 3, 4, 5, 2, 6]` | normal case (task) | 2, 3 times | 2, 3 times |
+| `[7, 7, 3, 3, 7, 5, 5, 5, 7, 2]` | normal case (task) | 7, 4 times | 7, 4 times |
+| `[9, 9, 8]` | lower max than the list before | 9, 2 times | 9, 2 times |
+| `[1, 2]` | tie | 1, 1 time (first one wins) | 1, 1 time |
+| `[]` | empty list | no result (not defined by the task) | 0, 0 times ⚠️ see Known limitations |
+
+**Known limitations:**
+- An empty list prints `0` and frequency `0`, even though there is
+  no 0 in the list. The task doesn't ask for this case, so I only
+  documented it.
+- If two numbers are equally frequent, only the first one in the list
+  is shown.
+- The program counts every number again for every position, so it
+  gets slow for very long lists. For this task that is fine.
