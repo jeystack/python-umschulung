@@ -102,3 +102,41 @@ again if I ever make it again.
   is shown.
 - The program counts every number again for every position, so it
   gets slow for very long lists. For this task that is fine.
+
+  
+## Assignment: Primzahlen (`primzahlen.py`)
+
+**Task:** Ask the user for a number and print for every number from 2
+up to it whether it is a prime number. At the end, print the list of
+all prime numbers found.
+
+**What I learned:**
+- A yes/no question needs a yes/no variable. My first version counted
+  divisors, but with `break` the counter can never go higher than 1.
+  `is_prime` says directly what I want to know.
+- `is_prime` starts as `True` and is only set to `False` when a divisor
+  is found. It has to be reset for every new number.
+- `range(2, i)` checks every number except 1 and `i` itself. These two
+  always divide `i`, so they prove nothing.
+- `break` stops the inner loop at the first divisor, because one divisor
+  is enough to prove that a number is not prime.
+- The 2 works without a special case: `range(2, 2)` is empty, so the
+  inner loop never runs and `is_prime` stays `True`.
+
+**Test cases (checked manually):**
+| Input | Why this case | Expected | Actual |
+|-------|---------------|----------|--------|
+| 2 | smallest prime, inner loop never runs | `[2]` | `[2]` |
+| 9 | odd number that is not prime | `[2, 3, 5, 7]` | `[2, 3, 5, 7]` |
+| 25 | square of a prime | 25 is not prime | 25 is not prime |
+| 12 | even number, many divisors | 12 is not prime | 12 is not prime |
+| 13 | prime at the upper limit | 13 is prime | 13 is prime |
+| 1 | no number to check | `[]` | `[]` |
+| 0 | range is empty | `[]` | `[]` |
+
+**Known limitations:**
+- Entering text instead of a number crashes the program (`ValueError`
+  from `int()`). Handling this with `try`/`except` is planned for
+  Programming 2.
+- For every number, all possible divisors up to `i - 1` are checked.
+  That gets slow for large numbers. For this task that is fine.

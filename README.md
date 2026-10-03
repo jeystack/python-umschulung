@@ -21,6 +21,7 @@ I learned.
 | Schaltjahr (leap year) | [`schaltjahr.py`](programmierung-1/schaltjahr.py) | conditions, modulo, `and` / `or` |
 | Palindrom | [`palindrom.py`](programmierung-1/palindrom.py) | strings, slicing, `.lower()` |
 | Häufigstes Element (most frequent number) | [`haeufigstes_element.py`](programmierung-1/haeufigstes_element.py) | nested loops, resetting state |
+| Primzahlen (prime numbers) | [`primzahlen.py`](programmierung-1/primzahlen.py) | nested loops, `break`, boolean flag |
 
 Task descriptions, test tables and lessons learned for each assignment:
 **[programmierung-1/README.md](programmierung-1/README.md)**
