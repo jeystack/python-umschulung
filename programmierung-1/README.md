@@ -103,7 +103,6 @@ again if I ever make it again.
 - The program counts every number again for every position, so it
   gets slow for very long lists. For this task that is fine.
 
-  
 ## Assignment: Primzahlen (`primzahlen.py`)
 
 **Task:** Ask the user for a number and print for every number from 2
@@ -127,12 +126,13 @@ all prime numbers found.
 | Input | Why this case | Expected | Actual |
 |-------|---------------|----------|--------|
 | 2 | smallest prime, inner loop never runs | `[2]` | `[2]` |
-| 9 | odd number that is not prime | `[2, 3, 5, 7]` | `[2, 3, 5, 7]` |
+| 9 | only one divisor (3) between 1 and 9 – would be reported as prime if the loop stopped too early | `[2, 3, 5, 7]` | `[2, 3, 5, 7]` |
 | 25 | square of a prime | 25 is not prime | 25 is not prime |
 | 12 | even number, many divisors | 12 is not prime | 12 is not prime |
 | 13 | prime at the upper limit | 13 is prime | 13 is prime |
 | 1 | no number to check | `[]` | `[]` |
 | 0 | range is empty | `[]` | `[]` |
+|-5 | negative input | `[]` | `[]` |
 
 **Known limitations:**
 - Entering text instead of a number crashes the program (`ValueError`
